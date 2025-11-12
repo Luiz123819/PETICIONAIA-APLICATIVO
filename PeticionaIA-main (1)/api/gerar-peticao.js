@@ -11,12 +11,9 @@ export default async function handler(req, res) {
     const { relato } = req.body;
 
     const response = await client.chat.completions.create({
-      model: "gpt-4.1-mini", // ajuste para modelo disponível
+      model: "gpt-4.1-mini",
       messages: [
-        {
-          role: "user",
-          content: `Você é um advogado. Elabore uma petição inicial completa com base no relato: ${relato}`
-        }
+        { role: "user", content: `Você é um advogado. Elabore uma petição inicial com base no relato: ${relato}` }
       ],
     });
 
@@ -26,3 +23,9 @@ export default async function handler(req, res) {
     res.status(500).json({ erro: "Erro ao gerar petição" });
   }
 }
+
+const response = await fetch("/api/gerar-peticao", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ relato })
+});
