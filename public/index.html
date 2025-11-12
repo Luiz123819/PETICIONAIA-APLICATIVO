@@ -47,39 +47,7 @@
 
   <script src="script.js"></script>
   <!-- JAVASCRIPT -->
-  <script>
-    // Simula carregamento
-    window.addEventListener("load", () => {
-      const loadingScreen = document.getElementById("loading-screen");
-      const mainContent = document.getElementById("main-content");
-
-      // Espera 3 segundos antes de mostrar o conteúdo
-      setTimeout(() => {
-        loadingScreen.style.display = "none";
-        mainContent.style.display = "block";
-      }, 3000);
-    });
-
-    // Exemplo simples de login
-    document.getElementById("loginForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
-      const message = document.getElementById("message");
-
-      if (username === "admin" && password === "1234") {
-        message.style.color = "green";
-        message.textContent = "Login realizado com sucesso!";
-        // redireciona para página principal
-        setTimeout(() => {
-          window.location.href = "index.html";
-        }, 1500);
-      } else {
-        message.style.color = "red";
-        message.textContent = "Usuário ou senha inválidos.";
-      }
-    });
-  </script>
+ <script src="main.js"></script>
 </body>
 </html>
 

@@ -36,29 +36,6 @@
   </div>
 
   <!-- Script para validar e redirecionar -->
-  <script>
-    document.getElementById("signupForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-      const message = document.getElementById("message");
-
-      if (password.length < 6) {
-        message.style.color = "red";
-        message.textContent = "A senha deve ter pelo menos 6 caracteres.";
-        return;
-      }
-
-      // Exemplo simples de sucesso
-      message.style.color = "green";
-      message.textContent = "Cadastro realizado com sucesso!";
-      
-      // Redireciona após 2 segundos
-      setTimeout(() => {
-        window.location.href = "index.html";
-      }, 2000);
-    });
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
