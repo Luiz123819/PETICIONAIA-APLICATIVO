@@ -1,7 +1,6 @@
 {
   "name": "gerador-peticao",
   "version": "1.0.0",
-  "description": "Gerador de petições usando OpenAI e Vercel",
   "main": "index.js",
   "scripts": {
     "dev": "vercel dev",
