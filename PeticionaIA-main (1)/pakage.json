@@ -1,20 +1,13 @@
 {
-  "name": "projeto-peticao",
+  "name": "gerador-peticao",
   "version": "1.0.0",
-  "description": "Aplicativo jurídico que gera petições usando Node.js, Express e OpenAI",
-  "main": "server.js",
-  "type": "module",
+  "description": "Gerador de petições usando OpenAI e Vercel",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "vercel dev",
+    "start": "vercel dev"
   },
   "dependencies": {
-    "express": "^4.19.2",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
     "openai": "^4.0.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.0"
   }
 }
