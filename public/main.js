@@ -22,7 +22,7 @@
         message.textContent = "Login realizado com sucesso!";
         // redireciona para página principal
         setTimeout(() => {
-          window.location.href = "index.html";
+          window.location.href = "peticao.html";
         }, 1500);
       } else {
         message.style.color = "red";
@@ -52,6 +52,6 @@
       
       // Redireciona após 2 segundos
       setTimeout(() => {
-        window.location.href = "index.html";
+        window.location.href = "peticao.html";
       }, 2000);
     });
