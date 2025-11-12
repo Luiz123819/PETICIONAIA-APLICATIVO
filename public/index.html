@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PETICIONA IA</title>
+
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/login.css">
+</head>
+<body style="background-color: var(--color-secondary)">
+  <!-- Tela de carregamento -->
+  <div id="loading-screen">
+    <div class="loader">
+      <span class="icon">⚖️</span>
+      <p>Carregando PeticionaIA...</p>
+    </div>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div id="main-content" style="display:none;">
+    <div class="login-container">
+      <div class="login-box">
+        <span class="icon-Login">⚖️</span>
+        <h2>PeticionaIA</h2>
+        <form id="loginForm">
+          <div class="input-group">
+            <label for="username">Usuário</label>
+            <input type="text" id="username" placeholder="Digite seu usuário" required>
+          </div>
+          <div class="input-group">
+            <label for="password">Senha</label>
+            <input type="password" id="password" placeholder="Digite sua senha" required>
+          </div>
+          
+          <p class="linkCadastro">
+            Não tem conta? <a href="cadastro.html">Criar conta</a>
+          </p>
+          
+          <!-- Botão correto dentro do form -->
+          <button type="submit">Entrar</button>
+        </form>
+        <p id="message"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <!-- JAVASCRIPT -->
+  <script>
+    // Simula carregamento
+    window.addEventListener("load", () => {
+      const loadingScreen = document.getElementById("loading-screen");
+      const mainContent = document.getElementById("main-content");
+
+      // Espera 3 segundos antes de mostrar o conteúdo
+      setTimeout(() => {
+        loadingScreen.style.display = "none";
+        mainContent.style.display = "block";
+      }, 3000);
+    });
+
+    // Exemplo simples de login
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const message = document.getElementById("message");
+
+      if (username === "admin" && password === "1234") {
+        message.style.color = "green";
+        message.textContent = "Login realizado com sucesso!";
+        // redireciona para página principal
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 1500);
+      } else {
+        message.style.color = "red";
+        message.textContent = "Usuário ou senha inválidos.";
+      }
+    });
+  </script>
+</body>
+</html>
+
